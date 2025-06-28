@@ -53,12 +53,17 @@
 //     bot.sendMessage(chatId, `Ваш заказ: ${text}\nСпасибо! Мы свяжемся с вами для подтверждения.`);
 //   }
 // });
+require('dotenv').config();
+
+const token = process.env.BOT_TOKEN;
+const TelegramBot = require('node-telegram-bot-api');
+const bot = new TelegramBot(token, { polling: true });
 
 const TelegramBot = require('node-telegram-bot-api');
 require('dotenv').config();
 
 // 💬 Вставь свой токен в .env (BOT_TOKEN=...)
-const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
+// const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 // 👤 Твой Telegram ID для приёма заказов
 const ADMIN_CHAT_ID = '1179244332'; // замени на свой ID
